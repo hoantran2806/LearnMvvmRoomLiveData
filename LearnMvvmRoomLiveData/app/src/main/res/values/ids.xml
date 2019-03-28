@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="note_recycleview" type="id"></item>
+    <item name="button_add" type="id" ></item>
+    <item name="title_edittext" type="id" ></item>
+    <item name="description_edittext" type="id" ></item>
+    <item name="priority_picker" type="id" ></item>
+</resources>

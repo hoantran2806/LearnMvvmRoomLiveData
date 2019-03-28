@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LearnMvvmRoomLiveData</string>
+    <string name="add_note">Add Note</string>
+    <string name="insert_title">Insert Title</string>
+    <string name="insert_description">Insert Description</string>
+    <string name="edit_note">Edit_Note</string>
+</resources>
