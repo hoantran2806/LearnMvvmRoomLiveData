@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
         mBtn_Add_Note.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddEditNoteActivity.class);
+                Intent intent = new Intent(MainActivity.this,
+                        AddEditNoteActivity.class);
                 startActivityForResult(intent, ADD_NOTE_REQUEST);
 //                Toast.makeText(MainActivity.this, "Button Clicked", Toast.LENGTH_SHORT).show();
             }
@@ -77,14 +78,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
                 mNoteViewModel.deleteNote(noteAdapter.getNoteAt(position));
-                Toast.makeText(MainActivity.this, "Note Deleted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Note Deleted", Toast.LENGTH_SHORT)
+                        .show();
             }
         }).attachToRecyclerView(mRecyclerView);
 
         noteAdapter.setOnItemClickListener(new NoteAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Note note) {
-                Intent intent = new Intent(MainActivity.this, AddEditNoteActivity.class);
+                Intent intent = new Intent(MainActivity.this,
+                        AddEditNoteActivity.class);
                 intent.putExtra(AddEditNoteActivity.EXTRA_ID, note.getId());
                 intent.putExtra(AddEditNoteActivity.EXTRA_TITLE, note.getTitle());
                 intent.putExtra(AddEditNoteActivity.EXTRA_DESCRIPTION, note.getDescription());
@@ -107,7 +110,8 @@ public class MainActivity extends AppCompatActivity {
         } else if (requestCode == EDIT_NOTE_REQUEST && resultCode == RESULT_OK) {
             int id = dataIntent.getIntExtra(AddEditNoteActivity.EXTRA_ID, -1);
             if (id == -1) {
-                Toast.makeText(this, "This Note can not be edited", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "This Note can not be edited", Toast.LENGTH_SHORT)
+                        .show();
                 return;
             }
             String title = dataIntent.getStringExtra(AddEditNoteActivity.EXTRA_TITLE);
